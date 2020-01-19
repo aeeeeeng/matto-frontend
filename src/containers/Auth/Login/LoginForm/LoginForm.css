@@ -1,0 +1,119 @@
+.login-page .card-login {
+    transform: translateZ(0);
+    transition: all .3s linear;
+}
+
+.card-header-rose {
+    position: relative !important;
+    top: 0 !important;
+    width: calc(100% - 40px);
+    padding: 15px;
+    border-radius: 3px;
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(233,30,99,.4);
+    background: linear-gradient(60deg,#ec407a,#d81b60);
+    margin-top: -55px!important;
+    margin-bottom: 30px;
+}
+
+.login-page .card-login .card-title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
+.logo-login {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+.logo-login img {
+    max-width: 230px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.58), 0 7px 10px -5px rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+.login-page .card-login .card-body {
+    padding: 0 20px 0 20px;
+}
+
+.card-description {
+    color: #999;
+    margin-bottom: 30px;
+}
+
+.bmd-form-group {
+    position: relative;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group-text.flat {
+    border-radius: 0 !important;
+    /* border: none !important; */
+}
+
+.form-control.flat {
+    border-radius: 0 !important;
+}
+
+.card .card-body+.card-footer, .card .card-footer {
+    padding: 0;
+    padding-top: 10px;
+    margin: 0 15px 10px;
+    border-radius: 0;
+    align-items: center;
+    border: 0;
+    background-color: transparent;
+    display: flex;
+}
+
+.justify-content-center {
+    justify-content: center !important;
+}
+
+.btn-orange {
+    background-color: transparent;
+    color: #f19733;
+}
+
+.btn-orange.focus, .btn-orange:focus {
+    text-decoration: none;
+    box-shadow: none;
+}
+
+.btn-orange:hover {
+    color: #f28409;
+    text-decoration: none;
+}
+
+.form-control::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #999;
+    font-size: 13px;
+}
+.form-control:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #999;
+   opacity:  1;
+   font-size: 13px;
+}
+.form-control::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #999;
+   opacity:  1;
+   font-size: 13px;
+}
+.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #999;
+   font-size: 13px;
+}
+.form-control::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #999;
+   font-size: 13px;
+}
+
+.form-control::placeholder { /* Most modern browsers support this now. */
+   color:    #999;
+   font-size: 13px;
+}

@@ -1,0 +1,31 @@
+.navbar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.btn-icon {
+    position: relative;
+}
+
+.btn-icon span.header-icon {
+    color: #fff;
+    font-size: 18px;
+}
+
+.header-group {
+    display: inline-flex;
+    box-sizing: border-box;
+    justify-content: space-around;
+    width: 400px;
+    float: right;
+}
+
+.full-width {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.dropdown-navbar {
+    position: relative;
+}

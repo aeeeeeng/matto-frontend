@@ -1,0 +1,17 @@
+.badges {
+    position: absolute;
+    top: -5px;
+    border: 1px solid #343a40;
+    left: 10px;
+    font-size: 9px;
+    background:red;
+    color: #fff;
+    min-width: 20px;
+    padding: 0 5px;
+    height: 20px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 19px;
+    vertical-align: middle;
+    display: block;
+}

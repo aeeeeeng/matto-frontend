@@ -1,0 +1,13 @@
+body {
+    background-color: #eeeeee !important;
+}
+
+a {
+    color: #111;
+}
+
+.wrapper {
+    height: 100vh;
+    position: relative;
+    top: 0;
+}

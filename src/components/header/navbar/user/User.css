@@ -1,0 +1,65 @@
+.user-collapse {
+    position: absolute;
+    background: #fff;
+    padding: 10px;
+    right: 0;
+    top: 39px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+    transition: transform .3s cubic-bezier(.4,0,.2,1),opacity .2s cubic-bezier(.4,0,.2,1);
+    border-radius: .25rem;
+    text-align: left;
+    font-size: 1rem;
+    color: #212529;
+    background-clip: padding-box;
+    min-width: 10rem;
+    display: block;
+    z-index: 1;
+}
+
+.user-item {
+    list-style: none;
+    padding: 0;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    display: block;
+    position: relative;
+    width: auto;
+    display: flex;
+    flex-flow: nowrap;
+    align-items: center;
+    color: #333;
+    font-weight: 400;
+    text-decoration: none;
+    font-size: .8125rem;
+    border-radius: .125rem;
+    margin: 0 .3125rem;
+    transition: all .15s linear;
+    min-width: 7rem;
+    padding: .625rem 1.25rem;
+    overflow: hidden;
+    line-height: 1.428571;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    clear: both;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
+a.user-item {
+    text-decoration: none;
+}
+
+.user-item:hover {
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(156,39,176,.4);
+    background-color: #F1993D;
+    color: #fff;
+}
+
+.dropdown-divider {
+    height: 0;
+    margin: .5rem 0;
+    overflow: hidden;
+    border-top: 1px solid #e9ecef;
+}

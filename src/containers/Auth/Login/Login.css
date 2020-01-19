@@ -1,0 +1,57 @@
+.container {
+    z-index: 2;
+}
+
+.wrapper.wrapper-full-page {
+    height: auto;
+    min-height: 100vh;
+}
+
+.wrapper {
+    position: relative;
+    top: 0;
+    height: 100vh;
+}
+
+.off-canvas-sidebar .wrapper-full-page .page-header {
+    padding: 15vh 0!important;
+}
+
+.header-filter {
+    position: relative;
+}
+
+.page-header, .page-header .page-header-image {
+    height: 100%;
+}
+
+.page-header {
+    min-height: 100vh;
+    max-height: 1000px;
+    display: flex!important;
+    margin: 0;
+    border: 0;
+    color: #fff;
+    align-items: center;
+    background-image: url('../../../assets/img/background.jpg');
+    background-size: cover;
+    background-position: top center;
+}
+
+.header-filter:before {
+    background: rgba(0,0,0,.5);
+}
+
+.header-filter:after, .header-filter:before {
+    position: absolute;
+    /* z-index: 0; */
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+    content: "";
+}
+
+
+
