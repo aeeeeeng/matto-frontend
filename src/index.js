@@ -8,6 +8,7 @@ import {createStore, applyMiddleware} from 'redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import {Provider} from 'react-redux';
+import ReduxToastr from 'react-redux-toastr';
 
 import rootReducer from './store/rootReducer';
 
@@ -18,6 +19,16 @@ const store = createStore(rootReducer,
 ReactDOM.render(
     <Provider store={store}>
         <Admin />
+        <ReduxToastr
+            timeOut={4000}
+            newestOnTop={false}
+            preventDuplicates
+            position="top-right"
+            getState={(state) => state.toastr}
+            transitionIn="bounceInDown"
+            transitionOut="bounceOutUp"
+            progressBar
+            closeOnToastrClick/>
     </Provider>, 
     document.getElementById('root')
 );
