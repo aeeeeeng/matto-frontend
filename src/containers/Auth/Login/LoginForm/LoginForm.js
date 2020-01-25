@@ -1,12 +1,12 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faKey } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faKey, faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 
 import './LoginForm.css';
 
 import logo from '../../../../assets/img/logo.jpeg';
 
-import {Card, FormFeedback} from 'react-bootstrap';
+import {Card} from 'react-bootstrap';
 
 const LoginForm = props => {
     return(
@@ -42,13 +42,19 @@ const LoginForm = props => {
                                     </div>
                                 </span>
                             </div>
-                            <input type="password" className={`form-control flat ${ (props.state.error && props.state.errors.password) ? 'is-invalid' : '' } `} id="password" name="password" onChange={(e) => props.handleChange(e)} placeholder="Your Passwiord..." />
+                            <input type="password" className={`form-control flat ${ (props.state.error && props.state.errors.password) ? 'is-invalid' : '' } `} id="password" name="password" onChange={(e) => props.handleChange(e)} placeholder="Your Password..." />
                         </div>
                         <span className="text-danger"> {props.state.errors.password} </span>
                     </span>
                 </Card.Body>
                 <Card.Footer className="justify-content-center">
-                    <button type="submit" className="btn btn-orange btn-link btn-lg"> Lets Go </button>
+                    {props.state.loading ? (
+                        <div className="login-loading-icon">
+                            <FontAwesomeIcon icon={faCircleNotch} spin />
+                        </div>
+                    ) : (
+                        <button type="submit" className="btn btn-orange btn-link btn-lg"> Lets Go </button>
+                    )}
                 </Card.Footer>
             </Card>
         </form>

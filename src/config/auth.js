@@ -24,7 +24,7 @@ export const userIsAuthenticatedRedir = connectedRouterRedirect({
 // ------------- IS ADMIN -------------
 
 const userIsAuthenticatedAdminDefaults = {
-    authenticatedSelector: state => state.auth.user !== null && state.auth.user.isAdmin,
+    authenticatedSelector: state => (state.auth.user !== null) && (state.auth.isAdmin === 'OK'),
     wrapperDisplayName: 'UserIsAdmin'
 }
 
@@ -34,7 +34,6 @@ export const userIsAdminRedir = connectedRouterRedirect({
     ...userIsAuthenticatedAdminDefaults, 
     redirectPath: '/login',    
     predicate: user => user.isAdmin,
-    
 });
 
 // ------------- END IS ADMIN -------------

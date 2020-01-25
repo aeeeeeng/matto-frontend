@@ -11,10 +11,16 @@ import {Provider} from 'react-redux';
 import ReduxToastr from 'react-redux-toastr';
 
 import rootReducer from './store/rootReducer';
+import jwtMiddleware from './config/jwtMiddleware';
+
+// const middleware = [thunk, refreshAuth];
 
 const store = createStore(rootReducer, 
     composeWithDevTools(applyMiddleware(thunk))
 )
+
+jwtMiddleware.setupInterceptors(store);
+jwtMiddleware.refresh(store);
 
 ReactDOM.render(
     <Provider store={store}>

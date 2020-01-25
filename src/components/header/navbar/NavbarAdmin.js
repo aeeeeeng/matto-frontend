@@ -1,11 +1,14 @@
 import React from 'react';
 import {Navbar, Container, Row, Col, Form, FormControl, Button} from 'react-bootstrap';
+import {connect} from 'react-redux';
+import {toastr} from 'react-redux-toastr';
 import Aux from '../../../hoc/Aux';
 
 import './NavbarAdmin.css';
 
 import User from './user/User';
 import Notification from './notification/Notification';
+import {logoutAction, logoutResponse} from '../../../store/actions/authActions';
 
 class NavbarAdmin extends React.Component {
 
@@ -33,6 +36,16 @@ class NavbarAdmin extends React.Component {
         }
     }
 
+    handleClickLogout = (event) => {
+        event.preventDefault()
+        this.props.logoutAction().then(response => {
+            toastr.success('Logout');
+            this.props.logoutResponse({type: true});
+        }).catch(error => {
+            this.props.logoutResponse({type: false})
+        })
+    }
+
     render() {
         return (
             <Aux>
@@ -46,7 +59,7 @@ class NavbarAdmin extends React.Component {
                                         <Button variant="outline-warning btn-sm flat">Search</Button>
                                     </Form>
                                     <Notification isCollapse={this.state.notifCollapse} collapseCLick={this.handleClickCollapse} />
-                                    <User isCollapse={this.state.userCollapse} collapseCLick={this.handleClickCollapse}/>
+                                    <User isCollapse={this.state.userCollapse} collapseCLick={this.handleClickCollapse} logout={this.handleClickLogout}/>
                                 </div>
                             </Col>
                         </Row>
@@ -57,4 +70,11 @@ class NavbarAdmin extends React.Component {
     }
 }
 
-export default NavbarAdmin;
+const dispatchToProps = dispatch => {
+    return {
+        logoutAction: payload => dispatch(logoutAction(payload)),
+        logoutResponse: data => dispatch(logoutResponse(data))
+    }
+}
+
+export default connect(null, dispatchToProps)(NavbarAdmin);

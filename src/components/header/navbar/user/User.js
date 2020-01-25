@@ -12,7 +12,6 @@ const User = props => {
         <Aux>
             <a href="/" className="btn-icon" 
                onClick={(e) => props.collapseCLick(e, 'userCollapse')} 
-               onBlur={(e) => props.collapseCLick(e, 'userCollapse')}
                aria-controls="example-collapse-text"
                aria-expanded={props.isCollapse}
             >
@@ -24,7 +23,7 @@ const User = props => {
                 <div className="user-collapse">
                     <a href="/" className="user-item">Profile</a>
                     <div className="dropdown-divider"></div>
-                    <a href="/" className="user-item">Sign Out</a>
+                    <a href="/" onClick={(e) => props.logout(e)} className="user-item">Sign Out</a>
                 </div>
             </Collapse>
         </Aux>

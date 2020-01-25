@@ -2,13 +2,14 @@ import React from 'react';
 import {Card} from 'react-bootstrap';
 
 import Aux from '../../../hoc/Aux';
+import 'animate.css';
 
 class Master extends React.Component {
 
     render() {
         return(
             <Aux>
-            <Card>
+            <Card className="animate bounceIn">
                 <Card.Header as="h5">Master</Card.Header>
                 <Card.Body>
                     <Card.Title>This is Title</Card.Title>
