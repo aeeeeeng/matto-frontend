@@ -13,6 +13,8 @@ const authReducer = (state = initState, action) => {
         case FAIL_LOGIN_ACTION:
             return initState
         case SUCCESS_LOGOUT_ACTION:
+            localStorage.removeItem('isAdmin');
+            localStorage.removeItem('token');
             return {...state, user: null, isAdmin: false}
         case FAIL_LOGOUT_ACTION:
             return state

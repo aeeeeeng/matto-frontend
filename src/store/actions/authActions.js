@@ -26,8 +26,6 @@ export const logoutAction = (payload = {}) => {
 export const logoutResponse = response => {
     return dispatch => {
         if(response.type) {
-            localStorage.removeItem('isAdmin');
-            localStorage.removeItem('token');
             dispatch({type: SUCCESS_LOGOUT_ACTION});
         } else {
             dispatch({type: FAIL_LOGOUT_ACTION});

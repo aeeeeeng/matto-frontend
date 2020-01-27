@@ -24,9 +24,33 @@ class SidebarScreen extends React.Component {
 
     loading = () => <div className="animated fadeIn pt-1 text-center">Loading...</div>
 
-
+    componentDidMount() {
+        let {contents} = this.state;
+        const allChilds = contents.map(content => {
+            if(content.child) {
+                return content.child.map(child => ( {...child } ) )
+            }
+            return content;
+        }).flat();
+        const newContents = contents.concat(allChilds);
+        const results = newContents.filter(newContent => (!newContent.child));
+        this.setState({contents: results});
+    }
 
     render() {
+
+        const routes = this.state.contents.map((content, i) => {
+            return content.component ? (
+                <Route 
+                    key={i} 
+                    path={content.link} 
+                    name={content.name} 
+                    render={props => (<content.component {...props} />)}>
+                </Route>
+            ) : (null);
+        });
+
+        console.log(routes);
         return (
             <Aux>
                 <Layout>
@@ -40,18 +64,7 @@ class SidebarScreen extends React.Component {
                                 <Suspense fallback={this.loading()}>
                                     <Switch>
                                         <Route exact path="/"></Route>
-                                        {
-                                            this.state.contents.map((content, i) => {
-                                                return content.component ? (
-                                                    <Route 
-                                                        key={i} 
-                                                        path={content.link} 
-                                                        name={content.name} 
-                                                        render={props => (<content.component {...props} />)}>
-                                                    </Route>
-                                                ) : (null)
-                                            })
-                                        }
+                                        {routes}
                                         <Redirect from="/" to="/dashboard" />
                                     </Switch>
                                 </Suspense>

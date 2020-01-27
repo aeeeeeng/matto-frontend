@@ -1,6 +1,5 @@
 import React from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import {connect} from 'react-redux'
 import {toastr} from 'react-redux-toastr';
 
