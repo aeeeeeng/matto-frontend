@@ -1,0 +1,84 @@
+.date-filter {
+    /* margin-bottom: 30px; */
+    /* float: right; */
+}
+
+.date-filter .form {
+    display: inline-flex;
+    background-color: #343a40;
+    padding: 15px;
+    box-shadow: 0 4px 20px 0 rgba(28, 28, 28, 0), 0 7px 10px -5px rgba(3, 3, 3, 0.73);
+    border-radius: 5px;
+    margin-bottom: 50px;
+    position: relative;
+    margin-top: 50px;
+}
+
+.form div.field {
+    margin-right: 10px;
+}
+
+.form .btn-warning {
+    color: #fff;
+    background: linear-gradient(60deg,#ffb86c,#f19733);
+}
+
+.field.button-default {
+    position: absolute;
+    z-index: 1;
+    top: -39px;   
+}
+
+.form .button-default button {
+    display: block;
+    float: left;
+    margin-right: 10px;
+    box-shadow: 0 4px 20px 0 rgba(28, 28, 28, 0), 0 7px 10px -5px rgba(3, 3, 3, 0.34);
+}
+
+.shadow {
+    box-shadow: 0 4px 20px 0 rgb(243, 164, 65), 0 7px 10px -5px rgb(255, 168, 59) !important;
+}
+
+.react-datepicker__month {
+    background: linear-gradient(60deg,#ffb86c,#f19733);
+}
+
+.react-datepicker__day, .react-datepicker__month-text, .react-datepicker__quarter-text {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.react-datepicker__header {
+    background-color: #343a40;
+}
+
+.react-datepicker__current-month, .react-datepicker-time__header, .react-datepicker-year-header {
+    color: #fff;
+}
+
+.react-datepicker__portal .react-datepicker__navigation--previous {
+    border-right-color: #fff
+}
+
+.react-datepicker__portal .react-datepicker__navigation--next {
+    border-left-color: #fff
+}
+
+.react-datepicker__month-read-view--selected-month, .react-datepicker__month-read-view--down-arrow {
+    color: #fff;
+}
+
+.react-datepicker__year-read-view--selected-year, .react-datepicker__year-read-view--down-arrow {
+    color: #fff;
+}
+
+.react-datepicker__day-names .react-datepicker__day-name {
+    color: #fff;
+    font-weight: bold;
+}
+
+.react-datepicker__day--selected, .react-datepicker__day--in-selecting-range, .react-datepicker__day--in-range, .react-datepicker__month-text--selected, .react-datepicker__month-text--in-selecting-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--selected, .react-datepicker__quarter-text--in-selecting-range, .react-datepicker__quarter-text--in-range {
+    background-color: #343a40;
+}

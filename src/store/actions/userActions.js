@@ -1,10 +1,18 @@
 import axios from 'axios';
 import {SUCCESS_FETCH_USER, FAIL_FETCH_USER} from '../constants/userConstant';
 
-export const fetchUser = (perPage, page, keyword) => {
+export const fetchUser = (perPage, page, keyword, dateRange = null) => {
     return dispatch => {
         return new Promise((resolve, reject)=>{
             const params = {perPage, page, keyword}
+            if(dateRange) {
+                if(typeof dateRange.dateStart !== 'undefined') {
+                    params.dateStart = dateRange.dateStart;
+                } 
+                if(typeof dateRange.dateEnd !== 'undefined') {
+                    params.dateEnd = dateRange.dateEnd;
+                }
+            }
             axios.get('/api/users', {params})
             .then(res => {
                 resolve(res);
