@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFile, faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import {Collapse} from 'react-bootstrap';
 import { Link, useLocation } from "react-router-dom";
 
@@ -22,7 +22,7 @@ const NavItem = props => {
     let linkMenu = (
         <Link to={props.link} className={`nav-link ${pathname === props.link ? 'active' : ''}`} >
             <div className="icon">
-                <FontAwesomeIcon icon={faFile} />
+                <FontAwesomeIcon icon={props.icon} />
             </div>
             <p> 
                 {props.label}
@@ -44,7 +44,7 @@ const NavItem = props => {
         linkMenu = (
             <a href="/" className="nav-link" onClick={(e) => props.handleClickedHasSub(e, props.name)} aria-controls="example-collapse-text" aria-expanded={props.isCollapse}>
                 <div className="icon">
-                    <FontAwesomeIcon icon={faFile} />
+                    <FontAwesomeIcon icon={props.icon} />
                 </div>
                 <p> 
                     {props.label}

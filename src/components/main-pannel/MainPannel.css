@@ -53,3 +53,38 @@
     border-radius: 0 !important;
 }
 
+.btn.btn-warning {
+    color: #fff;
+    background: linear-gradient(60deg,#ffb86c,#f19733);
+    border: none;
+    box-shadow: 0 4px 20px 0 rgba(59, 59, 59, 0.14), 0 7px 10px -5px rgba(76,175,80,.4);
+}
+
+.btn.btn-primary {
+    background: linear-gradient(60deg,#007bff,#7bbbff);
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 20px 0 rgba(59, 59, 59, 0.14), 0 7px 10px -5px rgba(76,175,80,.4);
+}
+
+.btn.btn-secondary {
+    background: linear-gradient(60deg,#939393,#d3d3d3);
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 20px 0 rgba(59, 59, 59, 0.14), 0 7px 10px -5px rgba(76,175,80,.4);
+}
+
+.btn.btn-danger {
+    background: linear-gradient(60deg,#dc3545,#ddb2b7);
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 20px 0 rgba(59, 59, 59, 0.14), 0 7px 10px -5px rgba(76,175,80,.4);
+}
+
+.btn-toolbar {
+    margin-bottom: 20px;
+}
+
+.btn-toolbar button {
+    margin-right: 10px;
+}

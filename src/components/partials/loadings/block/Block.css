@@ -1,0 +1,22 @@
+div.block-loading {
+    position: absolute;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    display: block;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    padding-top: 10px;
+    text-align: center;
+}
+
+div.block-loading span {
+    font-style: italic;
+    color: red;
+}
+
+div.block-loading div.icon-loading {
+    font-size: 50px;
+    color: red;
+}

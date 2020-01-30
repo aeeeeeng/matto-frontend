@@ -50,7 +50,6 @@ class SidebarScreen extends React.Component {
             ) : (null);
         });
 
-        console.log(routes);
         return (
             <Aux>
                 <Layout>

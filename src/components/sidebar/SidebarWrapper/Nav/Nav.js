@@ -26,6 +26,7 @@ class Nav extends React.Component {
                                                              label={menu.label} 
                                                              child={menu.child ? menu.child : []} 
                                                              isCollapse={menu.isCollapse ? menu.isCollapse : false} 
+                                                             icon={menu.icon}
                                                              handleClickedHasSub={this.collapseMenu}/> 
                 )}
             </ul>
