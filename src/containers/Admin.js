@@ -12,7 +12,7 @@ import {userIsNotAuthenticatedRedir, userIsAdminRedir} from '../config/auth';
 const AdminHome = userIsAdminRedir(SidebarScreen);
 const Guest = userIsNotAuthenticatedRedir(Login);
 
-const loading = () => <div className="animated fadeIn pt-3 text-center"></div>;
+const loading = () => (<div className="animate animated fadeIn pt-3 text-center">Please Wait</div>)
 
 class Admin extends React.Component {
     render() {

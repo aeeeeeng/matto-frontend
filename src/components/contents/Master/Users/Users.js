@@ -13,6 +13,11 @@ import moment from 'moment';
 
 class Users extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this._isMounted = false;
+    }
+
     state = {
         loading: false,
         lengthPage: [10, 20, 50, 100, 200],
@@ -21,17 +26,22 @@ class Users extends React.Component {
     }
 
     componentDidMount() {
+        this._isMounted = true;
         this.asyncUser(1);
+    }
+
+    componentWillUnmount() {
+        this._isMounted = false;
     }
 
     changeRangeDate = (date, type) => {
         let dateStart, dateEnd;
         if(type === 'dateStart') {
             dateStart = moment(date).format('YYYY-MM-DD');
-            this.setState({dateStart});
+            this._isMounted && this.setState({dateStart});
         } else if (type === 'dateEnd') {
             dateEnd = moment(date).format('YYYY-MM-DD');
-            this.setState({dateEnd});
+            this._isMounted && this.setState({dateEnd});
         }
     }
 
@@ -41,14 +51,16 @@ class Users extends React.Component {
     }
 
     asyncUser = async (pageNumber, perPage = 10, keyword = null) => {
-        const dateRange = {
-            dateStart : this.state.dateStart,
-            dateEnd : this.state.dateEnd
+        if(this._isMounted) {
+            const dateRange = {
+                dateStart : this.state.dateStart,
+                dateEnd : this.state.dateEnd
+            }
+            this._isMounted && this.setState({loading: true})
+            this.props.fetchUser(perPage, pageNumber, keyword, dateRange)
+            .then(() => this._isMounted && this.setState({loading: false}))
+            .catch(()=> this._isMounted && this.setState({loading: false}));
         }
-        this.setState({loading: true})
-        this.props.fetchUser(perPage, pageNumber, keyword, dateRange)
-        .then(() => this.setState({loading: false}))
-        .catch(()=> this.setState({loading: false}));
     }
 
     render() {
@@ -73,7 +85,7 @@ class Users extends React.Component {
         
         return(
             <Aux>
-                <Card className="animate bounceIn">
+                <Card className="animate animated bounceInRight">
                     <Card.Header as="h5">User Data List</Card.Header>
                     <Card.Body>
                         <DateFilter dateStart={this.state.dateStart} dateEnd={this.state.dateEnd} handleChange={this.changeRangeDate} submit={this.asyncUser}/>

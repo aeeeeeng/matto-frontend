@@ -6,11 +6,13 @@ const Master =  React.lazy(() => import('../components/contents/Master/Master'))
 const ExamplePage =  React.lazy(() => import('../components/contents/ExamplePage'));
 const Users = React.lazy(() => import('../components/contents/Master/Users/Users'));
 const ProductTypes = React.lazy(() => import('../components/contents/Master/ProductTypes/ProductTypes'));
+const Uom = React.lazy(() => import('../components/contents/Master/Uom/Uom'));
 
 const routes = [
     { link: '/dashboard', name: 'dashboard', label: 'Dashboard', component: Dashboard, icon: faTachometerAlt },
     { link: '/master', name: 'master', label: 'Master', component: Master, isCollapse: false, icon: faDatabase, child:[
-        { link: '/master/product-types', name: 'productTypes', label: 'Product Types', component: ProductTypes, exact:'/example' }
+        { link: '/master/product-types', name: 'productTypes', label: 'Product Types', component: ProductTypes, exact:'/example' },
+        { link: '/master/uom', name: 'uom', label: 'UOM', component: Uom, exact:'/example' }
     ]},
     { link: '/config', name: 'config', label: 'Config', component: Master, isCollapse: false, icon: faTools, child:[
         { link: '/config/users', name: 'users', label: 'Users', component: Users, exact:'/config' },

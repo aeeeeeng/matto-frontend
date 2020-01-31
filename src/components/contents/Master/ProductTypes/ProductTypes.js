@@ -16,6 +16,12 @@ import { faWrench, faTrash } from '@fortawesome/free-solid-svg-icons';
 import {fetchProductTypes, showAddPage, showEditPage, deleteProductType} from '../../../../store/actions/productTypeActions';
 
 class ProductTypes extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this._isMounted = false;
+    }
+
     state = {
         loading: false,
         lengthPage: [10, 20, 50, 100, 200],
@@ -24,28 +30,35 @@ class ProductTypes extends React.Component {
     }   
 
     componentDidMount() {
+        this._isMounted = true;
         this.asyncProductTypes(1);
     }
 
+    componentWillUnmount() {
+        this._isMounted = false;
+    }
+
     asyncProductTypes = async (pageNumber, perPage = 10, keyword = null) => {
-        const dateRange = {
-            dateStart : this.state.dateStart,
-            dateEnd : this.state.dateEnd
+        if(this._isMounted) {
+            const dateRange = {
+                dateStart : this.state.dateStart,
+                dateEnd : this.state.dateEnd
+            }
+            this._isMounted && this.setState({loading: true})
+            this.props.fetchProductTypes(perPage, pageNumber, keyword, dateRange)
+            .then(() => this._isMounted && this.setState({loading: false}))
+            .catch(()=> this._isMounted && this.setState({loading: false}));
         }
-        this.setState({loading: true})
-        this.props.fetchProductTypes(perPage, pageNumber, keyword, dateRange)
-        .then(() => this.setState({loading: false}))
-        .catch(()=> this.setState({loading: false}));
     }
 
     changeRangeDate = (date, type) => {
         let dateStart, dateEnd;
         if(type === 'dateStart') {
             dateStart = moment(date).format('YYYY-MM-DD');
-            this.setState({dateStart});
+            this._isMounted && this.setState({dateStart});
         } else if (type === 'dateEnd') {
             dateEnd = moment(date).format('YYYY-MM-DD');
-            this.setState({dateEnd});
+            this._isMounted && this.setState({dateEnd});
         }
     }
 
@@ -89,16 +102,16 @@ class ProductTypes extends React.Component {
                 </tr>
             ));
         } else {
-            rows = (<RowEmpty colSpan='5'>Data not found</RowEmpty>);
+            rows = (<RowEmpty colSpan='6'>Data not found</RowEmpty>);
         }
 
         const {optionPaginate} = this.props;
 
-        const loading = (<RowLoading colSpan='5'>Loading</RowLoading>);
+        const loading = (<RowLoading colSpan='7'>Loading</RowLoading>);
 
         return (
             <Aux>
-                <Card className="animate bounceIn">
+                <Card className="animate animated bounceInRight">
                     <Card.Header as="h5">Product Type List</Card.Header>
                     <Card.Body>
                         <DateFilter dateStart={this.state.dateStart} dateEnd={this.state.dateEnd} handleChange={this.changeRangeDate} submit={this.asyncProductTypes}/>

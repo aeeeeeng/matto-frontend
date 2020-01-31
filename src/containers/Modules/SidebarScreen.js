@@ -22,7 +22,7 @@ class SidebarScreen extends React.Component {
         contents: routes
     }
 
-    loading = () => <div className="animated fadeIn pt-1 text-center">Loading...</div>
+    loading = () => (<div className="animate animated fadeIn pt-1 text-center">Jancok...</div>);
 
     componentDidMount() {
         let {contents} = this.state;

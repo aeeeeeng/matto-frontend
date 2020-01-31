@@ -9,7 +9,7 @@ class ExamplePage extends React.Component {
     render() {
         return(
             <Aux>
-                <Card className="animate bounceIn">
+                <Card className="animate animated bounceInRight">
                     <Card.Header as="h5">Blank Page</Card.Header>
                     <Card.Body>
                         <Card.Title>This is Title</Card.Title>
