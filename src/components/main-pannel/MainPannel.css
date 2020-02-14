@@ -88,3 +88,7 @@
 .btn-toolbar button {
     margin-right: 10px;
 }
+
+.matto-table.nowrap thead tr td, .matto-table.nowrap tbody tr td {
+    white-space: nowrap;
+}
